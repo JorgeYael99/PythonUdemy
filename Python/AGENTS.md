@@ -38,7 +38,7 @@ python reserva_hoteles.py
 - **Funciones:** No se definen funciones - todo el código se ejecuta a nivel de módulo
 - **Clases:** No se utilizan
 - **Type Hints:** No se usan (enfoque amigable para principiantes)
-- **Imports:** Mínimos - solo biblioteca estándar (`math` module)
+- **Imports:** Mínimos - solo biblioteca estándar (`math`, `random` modules)
 
 ### Estilo de Formato
 - **Espaciado:** Espacios simples alrededor de operadores (`=` es excepción: sin espacios en algunos casos)
@@ -68,7 +68,17 @@ python reserva_hoteles.py
 ## Estructura del Proyecto
 
 ```
-/cadenas/                              # Ejemplos de manipulación de cadenas (13 archivos)
+/                                      # Archivos de lecciones individuales (8 archivos)
+├── hola_mundo.py                      # Primer programa - impresión básica
+├── variables.py                       # Variables y tipos de datos
+├── nombres_variables.py               # Reglas de nomenclatura
+├── constantes.py                     # Constantes y módulo math
+├── modificar_variables.py             # Reasignación de variables
+├── operadores.py                     # Operadores aritméticos, asignación, comparación, lógicos
+├── reserva_hoteles.py                 # Sistema de reservas aplicado
+└── tienda_online.py                   # Sistema de tienda aplicado
+
+/Cadenas/                              # Ejemplos de manipulación de cadenas (13 archivos)
 ├── cadenas_multilinea.py             # Triple comillas y textos extendidos
 ├── cadenas.py                        # Creación básica con comillas simples/dobles
 ├── caracteres_especiales.py          # Escape characters (\n, \t, \", \\)
@@ -81,26 +91,41 @@ python reserva_hoteles.py
 ├── reemplazar.py                     # Método .replace()
 ├── slicing.py                        # Extracción de partes con [:]
 ├── buscar_subcadenas.py              # Método .find()
-└── ejercicios_opencode/              # Ejercicios prácticos del estudiante
+└── EjerciciosOpencode/               # Ejercicios prácticos del estudiante
     └── ejercicio_integrado_cadenas.py # Ejercicio completo de 24 retos
+└── EjerciciosCurso/                  # Ejercicios del curso (2 archivos)
+    ├── generador_email.py            # Solución creativa con slicing avanzado
+    └── resolucion_generador_email.py # Solución oficial del curso
 
-/ejercicios_extras/                   # Ejercicios de práctica adicionales (3 archivos)
+/EntradaDatos/                         # Módulo de entrada de datos (4 archivos)
+├── entrada_datos.py                  # input(), int(), float()
+├── conversion_tipos.py               # str(), conversión de tipos
+├── funcion_bool.py                   # Función bool() y valores de verdad
+├── error_comun_bool.py               # Error común con bool() y strings
+├── generar_valores_aleatorios.py     # Módulo random y randint()
+└── EjerciciosCurso/                  # Ejercicios del curso (5 archivos)
+    ├── generador_email.py            # Generador de emails con input()
+    ├── generador_id.py               # Generador de IDs únicos
+    ├── receta_cocina.py              # Sistema de recetas
+    ├── sistema_empleados.py          # Sistema de empleados
+    └── resolucion_sistema_empleados.py # Solución oficial con bool()
+└── EjerciciosOpencode/               # Ejercicios prácticos del estudiante (3 archivos)
+    ├── registro_estudiantes.py       # Ejercicio de 15 puntos integrado
+    ├── resolucion_registro_estudiantes.py # Solución mejorada con if/elif
+    └── solucion_referencia_registro.py   # Solución de referencia
+
+/EjerciciosExtras/                    # Ejercicios de práctica adicionales (4 archivos)
 ├── ejercicio_busc_subc.py            # Ejercicio de búsqueda de subcadenas
-├── ejercicio_slicin.py               # Ejercicio de slicing
-└── sistema_*.py                      # Sistemas aplicados
-
-/ejercicios_curso/                    # Ejercicios del curso (2 archivos)
-├── generador_email.py                # Solución creativa con slicing avanzado
-└── resolucion_generador_email.py    # Solución oficial del curso
-
-*.py                                  # Archivos de lecciones individuales (15+ archivos)
+├── ejercicio_slicin.py               # Ejercicio de slicing (3 ejercicios)
+├── sistema_seguridad.py              # Sistema de seguridad con booleanos
+└── sistema_ferreteria.py            # Sistema de ferretería con cálculos
 ```
 
 ## Dependencias
 
 - **Python Version:** 3.12.3
 - **External Libraries:** None (pure standard library)
-- **Required Modules:** Only `math` for mathematical constants
+- **Required Modules:** `math` (constantes matemáticas), `random` (valores aleatorios)
 
 ## Directrices de Desarrollo
 
@@ -112,7 +137,7 @@ python reserva_hoteles.py
 5. Mantener formato consistente `print("Label:", variable)`
 
 ### Organización de Archivos
-- Keep related examples in subdirectories (`/cadenas/`, `/ejercicios_extras/`)
+- Keep related examples in subdirectories (`/Cadenas/`, `/EntradaDatos/`, `/EjerciciosExtras/`)
 - Use descriptive `snake_case.py` filenames
 - Start each file with comment header `#filename.py`
 
@@ -181,19 +206,20 @@ No automated test framework is implemented or needed for this educational conten
 - **DOMINADO:** Manipulación completa de cadenas (12 lecciones)
 
 #### **📡 Módulo de EntradaDatos (COMPLETO)**
-- **Lecciones Dominadas:** 4/4 lecciones + 1 ejercicio integrado
+- **Lecciones Dominadas:** 4/4 lecciones + 5 ejercicios curso + 3 ejercicios opencode
 - **Métodos Cubiertos:**
   - Entrada: `input()`, `int()`, `float()`
   - Conversiones: `str()`, `bool()` correcto
   - Validación: `.strip()`, `.title()`, `.lower()`
   - Proyectos: Sistemas interactivos completos
+  - Random: `random.randint()` para valores aleatorios
 
 #### **🟡 NIVEL INTERMEDIO** (Lecciones 6-10 Udemy)
 - Estructuras condicionales
 - Bucles y iteraciones
 - Funciones básicas
 - Listas y tuplas
-- **COMPLETO:** Sistemas aplicados (hoteles, tiendas, seguridad)
+- **COMPLETO:** Sistemas aplicados (hoteles, tiendas, seguridad, ferretería)
 
 #### **🔴 NIVEL AVANZADO** (Lecciones 11-15 Udemy)
 - Diccionarios y sets
@@ -241,16 +267,32 @@ No automated test framework is implemented or needed for this educational conten
 - Control de acceso
 - Registro de eventos
 
-#### **📊 Análisis de Datos**
-- Procesamiento de información
-- Estadísticas básicas
-- Reportes simples
+#### **📊 Sistema de Ferretería**
+- Cálculo de IVA
+- Procesamiento de compras
+- Validación de garantía
 
 #### **📧 Generador de Email**
 - Normalización de nombres
 - Procesamiento de dominios
 - Aplicación de slicing avanzado
 - Comparación de soluciones
+
+#### **🎓 Sistema de Estudiantes**
+- Registro académico
+- Validación de emails
+- Clasificación por rendimiento
+- Manejo de becas
+
+#### **🍳 Recetas de Cocina**
+- Captura de ingredientes
+- Tiempos de preparación
+- Niveles de dificultad
+
+#### **👥 Sistema de Empleados**
+- Datos del personal
+- Salarios y edad
+- Categorización de roles
 
 ### **Política de Cero Soluciones Anticipadas**
 
@@ -306,16 +348,35 @@ No automated test framework is implemented or needed for this educational conten
   - Escape: `\n`, `\t`, `\"`, `\\`
   - Inmutabilidad: Concepto dominado
 
+#### **📡 Módulo de EntradaDatos (COMPLETO)**
+- **Lecciones Dominadas:** 4/4 lecciones
+- **Conceptos Cubiertos:**
+  - Entrada: `input()` para capturar datos
+  - Conversión: `int()`, `float()`, `str()`
+  - Booleanos: `bool()` y manejo correcto
+  - Validación: `.strip()`, `.title()`, `.lower()`
+  - Random: `random.randint()` para valores aleatorios
+- **Ejercicios Curso:** 5 proyectos completos
+- **Ejercicios Opencode:** 3 soluciones implementadas
+
 ### **🏆 Ejercicios Realizados**
 
 #### **🎯 Ejercicios Individuales**
 - `ejercicio_busc_subc.py` - Búsqueda de subcadenas ✅
+- `ejercicio_slicin.py` - 3 ejercicios de slicing ✅
+- `sistema_seguridad.py` - Sistema de seguridad con booleanos ✅
+- `sistema_ferreteria.py` - Sistema con cálculos de IVA ✅
+
+#### **📚 Ejercicios Integrados**
 - `ejercicio_integrado_cadenas.py` - 24 retos completos ✅
 - `generador_email.py` - Proyecto real con slicing avanzado ✅
 - `registro_estudiantes.py` - Sistema integrado I/O + Cadenas (15 puntos, 15min, 100% preciso) ✅
+- `generador_id.py` - Generador de IDs con random ✅
+- `receta_cocina.py` - Sistema de recetas ✅
+- `sistema_empleados.py` - Sistema de empleados ✅
 
 #### **📊 Nivel Alcanzado: INTERMEDIO-AVANZADO**
-- **Tiempo Ejercicio:** 15 minutos (entrada datos) ✅
+- **Tiempo Ejercicio:** 15 minutos (registro estudiantes) ✅
 - **Precisión:** 100% funcional (15/15 puntos) ✅
 - **Integración:** Cadenas + EntradaDatos dominados ✅
 - **Comprensión:** 95% de conceptos de cadenas
@@ -323,13 +384,16 @@ No automated test framework is implemented or needed for this educational conten
 - **Sintaxis:** Limpia y consistente
 - **Resolución:** Autónoma y metódica
 
-### **� Fortalezas Desarrolladas**
+### **💪 Fortalezas Desarrolladas**
 - **Manipulación avanzada de cadenas**
 - **Uso creativo de slicing e índices**
 - **Normalización de texto**
 - **Construcción de f-strings complejos**
 - **Resolución de problemas del mundo real**
 - **Pensamiento algorítmico sólido**
+- **Captura y validación de entrada de datos**
+- **Conversión correcta de tipos de datos**
+- **Manejo de valores aleatorios con random**
 
 ### **📅 Próximos Temas a Explorar**
 - Estructuras condicionales (if/else)
