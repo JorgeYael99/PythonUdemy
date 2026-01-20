@@ -2,7 +2,7 @@
 
 ## Resumen del Proyecto
 
-Este es un repositorio educativo Python (PythonUdemy) que contiene código tutorial para principiantes en español. El proyecto se enfoca en enseñar fundamentos de Python a través de ejemplos prácticos como reservaciones de hoteles, tiendas en línea y operaciones con cadenas.
+Este es un repositorio educativo Python (PythonUdemy) que contiene código tutorial para principiantes en español. El proyecto se enfoca en enseñar fundamentos de Python a través de ejemplos prácticos como reservaciones de hoteles, tiendas en línea, seguridad y operaciones con cadenas.
 
 ## Comandos de Construcción/Prueba/Lint
 
@@ -15,16 +15,16 @@ python nombre_archivo.py
 
 Por ejemplo:
 ```bash
-python hola_mundo.py
-python variables.py
-python reserva_hoteles.py
+python Introduccion/hola_mundo.py
+python Cadenas/cadenas.py
+python EntradaDatos/entrada_datos.py
 ```
 
 ## Directrices de Estilo de Código
 
 ### Convenciones de Nomenclatura
 - **Variables:** `snake_case` (ej: `nombre_cliente`, `dias_estancia`, `tarifa_diaria`)
-- **Constantes:** `ALL_CAPS` (ej: `PI`, `NOMBRE_BASE_DATOS`)
+- **Constantes:** `ALL_CAPS` (ej: `PI`, `NOMBRE_BASE_DATOS`, `IVA`)
 - **Archivos:** `snake_case.py` (consistente en todo el proyecto)
 
 ### Idioma y Comentarios
@@ -58,6 +58,7 @@ python reserva_hoteles.py
 - **Separators:** Commas used for string concatenation in print
 - **Headers:** `*** System Name ***` format for section headers
 - **Newlines:** `"\n"` used for spacing between sections
+- **F-strings:** `{variable}` dentro de f-strings para formato avanzado
 
 ### Patrones Educativos
 - **Declaración de Variables:** Mostrar asignación inicial, luego modificación
@@ -68,57 +69,67 @@ python reserva_hoteles.py
 ## Estructura del Proyecto
 
 ```
-/                                      # Archivos de lecciones individuales (8 archivos)
-├── hola_mundo.py                      # Primer programa - impresión básica
-├── variables.py                       # Variables y tipos de datos
-├── nombres_variables.py               # Reglas de nomenclatura
-├── constantes.py                     # Constantes y módulo math
-├── modificar_variables.py             # Reasignación de variables
-├── operadores.py                     # Operadores aritméticos, asignación, comparación, lógicos
-├── reserva_hoteles.py                 # Sistema de reservas aplicado
-└── tienda_online.py                   # Sistema de tienda aplicado
-
-/Cadenas/                              # Ejemplos de manipulación de cadenas (13 archivos)
-├── cadenas_multilinea.py             # Triple comillas y textos extendidos
-├── cadenas.py                        # Creación básica con comillas simples/dobles
-├── caracteres_especiales.py          # Escape characters (\n, \t, \", \\)
-├── concatenacion_caracteres.py       # Unión de cadenas (+, comas, f-strings)
-├── convertir_mayusculas.py            # Método .upper()
-├── convertir_minusculas.py            # Método .lower()
-├── funcion_len.py                    # Función len() para longitud
-├── inmutabilidad_cadenas.py          # Concepto de inmutabilidad
-├── multiplicacion_cadenas.py         # Repetición con operador *
-├── reemplazar.py                     # Método .replace()
-├── slicing.py                        # Extracción de partes con [:]
-├── buscar_subcadenas.py              # Método .find()
-└── EjerciciosOpencode/               # Ejercicios prácticos del estudiante
-    └── ejercicio_integrado_cadenas.py # Ejercicio completo de 24 retos
-└── EjerciciosCurso/                  # Ejercicios del curso (2 archivos)
-    ├── generador_email.py            # Solución creativa con slicing avanzado
-    └── resolucion_generador_email.py # Solución oficial del curso
-
-/EntradaDatos/                         # Módulo de entrada de datos (4 archivos)
-├── entrada_datos.py                  # input(), int(), float()
-├── conversion_tipos.py               # str(), conversión de tipos
-├── funcion_bool.py                   # Función bool() y valores de verdad
-├── error_comun_bool.py               # Error común con bool() y strings
-├── generar_valores_aleatorios.py     # Módulo random y randint()
-└── EjerciciosCurso/                  # Ejercicios del curso (5 archivos)
-    ├── generador_email.py            # Generador de emails con input()
-    ├── generador_id.py               # Generador de IDs únicos
-    ├── receta_cocina.py              # Sistema de recetas
-    ├── sistema_empleados.py          # Sistema de empleados
-    └── resolucion_sistema_empleados.py # Solución oficial con bool()
-└── EjerciciosOpencode/               # Ejercicios prácticos del estudiante (3 archivos)
-    ├── registro_estudiantes.py       # Ejercicio de 15 puntos integrado
-    ├── resolucion_registro_estudiantes.py # Solución mejorada con if/elif
-    └── solucion_referencia_registro.py   # Solución de referencia
-
-/EjerciciosExtras/                    # Ejercicios de práctica adicionales (4 archivos)
-├── ejercicio_busc_subc.py            # Ejercicio de búsqueda de subcadenas
-├── ejercicio_slicin.py               # Ejercicio de slicing (3 ejercicios)
-├── sistema_seguridad.py              # Sistema de seguridad con booleanos
-└── sistema_ferreteria.py            # Sistema de ferretería con cálculos
+Python/
+│
+├── Introduccion/                        # Lecciones básicas fundamentales (8 archivos)
+│   ├── hola_mundo.py                    # Primer programa - impresión básica y variables
+│   ├── variables.py                     # Variables y tipos de datos (str, int, float, bool, None)
+│   ├── nombres_variables.py             # Reglas de nomenclatura snake_case y constantes
+│   ├── constantes.py                    # Constantes ALL_CAPS y módulo math
+│   ├── modificar_variables.py           # Reasignación de variables
+│   ├── operadores.py                    # Operadores aritméticos, asignación, comparación, lógicos
+│   ├── reserva_hoteles.py               # Sistema de reservas aplicado
+│   └── tienda_online.py                 # Sistema de tienda aplicado
+│
+├── Cadenas/                             # Manipulación completa de cadenas (9 lecciones + 7 ejercicios)
+│   ├── cadenas_multilinea.py           # Triple comillas """""" y textos extendidos
+│   ├── cadenas.py                      # Creación básica con comillas simples '', dobles ""
+│   ├── caracteres_especiales.py         # Escape characters (\n, \t, \", \\, raw strings r"")
+│   ├── concatenacion_caracteres.py      # Unión de cadenas (+, comas, f-strings)
+│   ├── convertir_mayusculas.py          # Método .upper()
+│   ├── convertir_minusculas.py          # Método .lower()
+│   ├── funcion_len.py                  # Función len() para longitud
+│   ├── inmutabilidad_cadenas.py        # Concepto de inmutabilidad
+│   ├── multiplicacion_cadenas.py       # Repetición con operador *
+│   ├── reemplazar.py                   # Método .replace()
+│   ├── slicing.py                      # Extracción de partes con [:], índices positivos/negativos
+│   ├── buscar_subcadenas.py            # Método .find()
+│   │
+│   ├── EjerciciosCurso/                 # Ejercicios del curso (3 archivos)
+│   │   ├── generador_email.py           # Solución creativa con slicing avanzado
+│   │   ├── resolucion_generador_email.py # Solución oficial del curso
+│   │   └── ejercicio_busc_subc.py       # Ejercicio de búsqueda de subcadenas
+│   │
+│   └── EjerciciosOpencode/              # Ejercicios prácticos del estudiante (4 archivos)
+│       ├── ejercicio_integrado_cadenas.py # Ejercicio completo de 24 retos
+│       ├── ejercicio_slicin.py          # 3 ejercicios de slicing avanzado
+│       ├── sistema_ferreteria.py        # Sistema con cálculos de IVA
+│       └── sistema_seguridad.py         # Sistema de seguridad con booleanos
+│
+├── EntradaDatos/                        # Módulo de entrada de datos (5 lecciones + 8 ejercicios)
+│   ├── entrada_datos.py                 # input(), int(), float() para capturar datos
+│   ├── conversion_tipos.py              # str(), conversión de tipos de datos
+│   ├── funcion_bool.py                  # Función bool() y valores de verdad
+│   ├── error_comun_bool.py              # Error común con bool() y strings
+│   ├── generar_valores_aleatorios.py    # Módulo random y randint()
+│   │
+│   ├── EjerciciosCurso/                 # Ejercicios del curso (5 archivos)
+│   │   ├── generador_email.py           # Generador de emails con input()
+│   │   ├── generador_id.py              # Generador de IDs únicos con random
+│   │   ├── receta_cocina.py             # Sistema de recetas
+│   │   ├── sistema_empleados.py         # Sistema de empleados (versión base)
+│   │   └── resolucion_sistema_empleados.py # Solución oficial con bool()
+│   │
+│   └── EjerciciosOpencode/              # Ejercicios prácticos del estudiante (3 archivos)
+│       ├── registro_estudiantes.py      # Ejercicio de 15 puntos integrado
+│       ├── resolucion_registro_estudiantes.py # Solución mejorada (ejemplo)
+│       └── solucion_referencia_registro.py   # Solución de referencia (ejemplo)
+│
+├── EjerciciosExtras/                     # Ejercicios de práctica adicionales (2 archivos)
+│   ├── ejercicio_busc_subc.py           # Ejercicio de búsqueda de subcadenas
+│   └── ejercicio_slicin.py              # Ejercicio de slicing (3 ejercicios)
+│
+└── AGENTS.md                             # Documentación del proyecto
 ```
 
 ## Dependencias
@@ -137,7 +148,7 @@ python reserva_hoteles.py
 5. Mantener formato consistente `print("Label:", variable)`
 
 ### Organización de Archivos
-- Keep related examples in subdirectories (`/Cadenas/`, `/EntradaDatos/`, `/EjerciciosExtras/`)
+- Keep related examples in subdirectories (`/Introduccion/`, `/Cadenas/`, `/EntradaDatos/`)
 - Use descriptive `snake_case.py` filenames
 - Start each file with comment header `#filename.py`
 
@@ -206,7 +217,7 @@ No automated test framework is implemented or needed for this educational conten
 - **DOMINADO:** Manipulación completa de cadenas (12 lecciones)
 
 #### **📡 Módulo de EntradaDatos (COMPLETO)**
-- **Lecciones Dominadas:** 4/4 lecciones + 5 ejercicios curso + 3 ejercicios opencode
+- **Lecciones Dominadas:** 5/5 lecciones + 5 ejercicios curso + 3 ejercicios opencode
 - **Métodos Cubiertos:**
   - Entrada: `input()`, `int()`, `float()`
   - Conversiones: `str()`, `bool()` correcto
@@ -250,83 +261,377 @@ No automated test framework is implemented or needed for this educational conten
    - Aprendes del proceso
    - Construimos confianza en tus habilidades
 
-### **Tipos de Ejercicios Disponibles**
+---
 
-#### **🏨 Sistema de Hoteles**
-- Gestión de reservas
-- Cálculo de tarifas
-- Validación de datos
+# 📚 DETALLE COMPLETO DE LECCIONES IMPLEMENTADAS
 
-#### **🛒 Tienda Online**
+## 🟢 MÓDULO 1: INTRODUCCIÓN A PYTHON (8 Lecciones)
+
+### **Lección 1: hola_mundo.py**
+**Concepto:** Primer programa Python e impresión básica
+**Funciones/Elementos:**
+- `print()` - Imprimir texto en consola
+- Variables simples con reasignación
+- Comentarios en línea con `#`
+**Aplicación:** Presentación básica de información personal
+
+### **Lección 2: variables.py**
+**Concepto:** Tipos de datos básicos en Python
+**Tipos Cubiertos:**
+- `str` - Cadenas de texto: `"Jorge"`, `'México'`
+- `int` - Enteros: `22`, `23`
+- `float` - Decimales: `5.2`, `2.1`
+- `bool` - Booleanos: `True`, `False`
+- `NoneType` - Ausencia de valor: `None`
+**Funciones:**
+- `type(variable)` - Verificar tipo de dato
+**Aplicación:** Registro de superhéroe con datos variados
+
+### **Lección 3: nombres_variables.py**
+**Concepto:** Reglas de nomenclatura Python
+**Convenciones:**
+- `snake_case` para variables: `nombre_explorador`
+- `ALL_CAPS` para constantes: `PI = 3.1415`
+- Prefijos semánticos: `es_`, `tiene_`, `puede_`
+**Reglas:**
+- No iniciar con números
+- Evitar palabras reservadas
+- Cuidar mayúsculas/minúsculas (case-sensitive)
+- No usar acentos o ñ
+**Aplicación:** Registro de explorador espacial
+
+### **Lección 4: constantes.py**
+**Concepto:** Constantes y módulo math
+**Funciones:**
+- `import math` - Importar módulo matemático
+- `math.pi` - Constante PI del lenguaje
+**Patrones:**
+- Definición: `NOMBRE_CONSTANTE = valor`
+- Convención: ALL_CAPS para constantes
+**Aplicación:** Sistema con constantes matemáticas
+
+### **Lección 5: modificar_variables.py**
+**Concepto:** Reasignación de variables
+**Conceptos:**
+- Variables pueden cambiar de valor
+- Sobrescritura de datos
+- Modificación de identidades
+**Aplicación:** Cambio de identidad de superhéroe
+
+### **Lección 6: operadores.py**
+**Concepto:** Operadores en Python
+**Tipos de Operadores:**
+1. **Aritméticos:** `+`, `-`, `*`, `/`, `%`
+2. **Asignación:** `=`, `+=`, `-=`, `/=`, `%=`
+3. **Comparación:** `==`, `!=`, `>`, `<`, `>=`, `<=`
+4. **Lógicos:** `and`, `or`, `not`
+**Aplicación:** Demostración completa de operadores
+
+### **Lección 7: reserva_hoteles.py**
+**Concepto:** Sistema aplicado de reservaciones
+**Funciones:**
+- Uso de tipos mixtos: `str`, `int`, `float`, `bool`
+- Modificación de valores múltiples
+**Aplicación:** Sistema de reservas de hoteles con múltiples clientes
+
+### **Lección 8: tienda_online.py**
+**Concepto:** Sistema aplicado de e-commerce
+**Funciones:**
+- Gestión de inventario
+- Modificación de precios y stock
+**Aplicación:** Sistema de tienda online con productos
+
+---
+
+## 🔤 MÓDULO 2: CADENAS (12 Lecciones + 7 Ejercicios)
+
+### **Técnicas de Normalización Dominadas**
+1. **`.strip()`** - Eliminar espacios en blanco al inicio y final
+2. **`.lower()`** - Convertir a minúsculas
+3. **`.upper()`** - Convertir a mayúsculas
+4. **`.title()`** - Convertir a formato título (primera letra mayúscula)
+5. **`.replace("viejo", "nuevo")`** - Reemplazar subcadenas
+6. **`len(cadena)`** - Obtener longitud de cadena
+
+### **Lección 1: cadenas.py**
+**Concepto:** Creación básica de cadenas
+**Funciones:**
+- Comillas simples: `'fruta'`
+- Comillas dobles: `"color"`
+- Comillas dentro de comillas: `'"Estudien mucho"'`
+**Aplicación:** Comillas anidadas para citas y libros
+
+### **Lección 2: cadenas_multilinea.py**
+**Concepto:** Textos largos y formatos especiales
+**Funciones:**
+- Triple comillas: `""""""` - Textos multilínea
+- Tabulación: `\t` - Espacios de 4/8 caracteres
+- Salto de línea: `\n` - Nueva línea
+- Backslash: `\\` - Rutas de Windows
+- Comillas escapadas: `\"`, `\'`
+- Raw strings: `r""` - Usar backslash literalmente
+**Aplicación:** Correo electrónico multilínea y rutas de archivos
+
+### **Lección 3: caracteres_especiales.py**
+**Concepto:** Escape characters avanzados
+**Caracteres de Escape:**
+- `\n` - Salto de línea
+- `\t` - Tabulación
+- `\"` - Comilla doble
+- `\\` - Backslash
+- `r"texto"` - Raw string (sin interpretar escapes)
+**Aplicación:** Diálogos, rutas de Windows, conversaciones
+
+### **Lección 4: concatenacion_caracteres.py**
+**Concepto:** Unión de cadenas
+**Métodos:**
+- `+` - Concatenación directa: `nombre + " " + apellido`
+- `,` - Concatenación con print: `print("Nombre:", nombre)`
+- `f"{variable}"` - F-strings: `f"Hola {nombre}, tienes {edad}"`
+**Aplicación:** Generación de nombres completos y presentaciones
+
+### **Lección 5: convertir_mayusculas.py**
+**Concepto:** Transformación a mayúsculas
+**Funciones:**
+- `.upper()` - Convertir toda la cadena a mayúsculas
+- `len(cadena)` - Calcular longitud
+**Aplicación:** Conversión de texto normalizado
+
+### **Lección 6: convertir_minusculas.py**
+**Concepto:** Transformación a minúsculas
+**Funciones:**
+- `.lower()` - Convertir toda la cadena a minúsculas
+- `len(cadena)` - Calcular longitud
+**Aplicación:** Conversión de texto normalizado
+
+### **Lección 7: funcion_len.py**
+**Concepto:** Longitud de cadenas
+**Funciones:**
+- `len(cadena)` - Retorna número de caracteres
+**Aplicación:** Medición de longitud de textos
+
+### **Lección 8: inmutabilidad_cadenas.py**
+**Concepto:** Cadenas son inmutables
+**Conceptos:**
+- NO se pueden modificar caracteres individuales
+- `cadena[0] = "G"` - ERROR
+- Solución: Crear nueva cadena con concatenación
+**Aplicación:** Demostración de inmutabilidad con "gato" → "gatos"
+
+### **Lección 9: multiplicacion_cadenas.py**
+**Concepto:** Repetición de cadenas
+**Funciones:**
+- `cadena * n` - Repetir cadena n veces
+- Solo funciona con enteros
+**Aplicación:** Separadores visuales, indentación, patrones
+
+### **Lección 10: reemplazar.py**
+**Concepto:** Reemplazo de subcadenas
+**Funciones:**
+- `.replace("viejo", "nuevo")` - Reemplazar todas
+- `.replace("viejo", "nuevo", 1)` - Reemplazar solo la primera
+**Aplicación:** Corrección de textos, substitución de términos
+
+### **Lección 11: slicing.py**
+**Concepto:** Extracción de partes de cadenas
+**Slicing Avanzado:**
+- `cadena[:4]` - Primeros 4 caracteres
+- `cadena[-4:]` - Últimos 4 caracteres
+- `cadena[::2]` - Saltos de 2 en 2
+- `cadena[5::3]` - Desde índice 5, saltos de 3
+- `cadena[::-1]` - Cadena invertida
+- `cadena[2:5]` - Rango específico
+- `cadena[-12:-5]` - Índices negativos
+**Aplicación:** Procesamiento de códigos, inversión de texto
+
+### **Lección 12: buscar_subcadenas.py**
+**Concepto:** Búsqueda de subcadenas
+**Funciones:**
+- `.find("texto")` - Retorna índice o -1 si no existe
+**Aplicación:** Búsqueda de palabras en textos
+
+---
+
+## 📡 MÓDULO 3: ENTRADA DE DATOS (5 Lecciones + 8 Ejercicios)
+
+### **Lección 1: entrada_datos.py**
+**Concepto:** Captura de datos del usuario
+**Funciones:**
+- `input("mensaje")` - Capturar como string
+- `int(input("..."))` - Capturar como entero
+- `float(input("..."))` - Capturar como decimal
+**Patrones:**
+```python
+nombre = input("Proporciona tu nombre: ")
+edad = int(input("Tu edad: "))
+altura = float(input("Tu altura: "))
+```
+**Aplicación:** Captura de datos personales
+
+### **Lección 2: conversion_tipos.py**
+**Concepto:** Conversión entre tipos de datos
+**Funciones:**
+- `str(numero)` - Convertir a string
+- `int(texto)` - Convertir a entero
+- `float(texto)` - Convertir a decimal
+**Conceptos:**
+- Solo se pueden concatenar strings
+- Conversión necesaria para operaciones
+**Aplicación:** Cálculos con datos convertidos
+
+### **Lección 3: funcion_bool.py**
+**Concepto:** Valores de verdad en Python
+**Funciones:**
+- `bool(valor)` - Convertir a booleano
+**Valores Falsy:**
+- `0`, `0.0` - Números cero
+- `""` - String vacío
+- `None` - Ausencia de valor
+- `False` - Booleano falso
+**Valores Truthy:**
+- Cualquier número != 0
+- Cualquier string no vacío `" "` incluye espacio
+- `True` - Booleano verdadero
+**Aplicación:** Validación de vacíos y valores numéricos
+
+### **Lección 4: error_comun_bool.py**
+**Concepto:** Error común con bool() en strings
+**Problema:**
+```python
+respuesta_usuario = "False"
+bool(respuesta_usuario)  # Retorna True (tiene 5 letras)
+```
+**Solución:**
+```python
+texto_vacio = ""
+bool(texto_vacio)  # Retorna False (realmente vacío)
+```
+**Aplicación:** Validación correcta de strings vacíos
+
+### **Lección 5: generar_valores_aleatorios.py**
+**Concepto:** Valores aleatorios con módulo random
+**Funciones:**
+- `import random` - Importar módulo
+- `from random import randint` - Importar función específica
+- `randint(min, max)` - Generar número aleatorio entre min y max
+**Aplicación:**
+- Dado de 6 caras: `randint(1, 6)`
+- Números del 1-10: `randint(1, 10)`
+
+---
+
+## 🎯 SISTEMAS APLICADOS IMPLEMENTADOS
+
+### **🏨 Sistema de Reserva de Hoteles**
+**Archivo:** `reserva_hoteles.py`
+**Funciones:**
+- Gestión de múltiples clientes
+- Variables: `nombre_cliente`, `dias_estancia`, `tarifa_diaria`, `tiene_vista_mar`
+- Modificación dinámica de datos
+
+### **🛒 Tienda Online**
+**Archivo:** `tienda_online.py`
+**Funciones:**
 - Inventario de productos
-- Carrito de compras
-- Procesamiento de pagos
+- Actualización de precios y stock
+- Estados de disponibilidad
 
-#### **🔐 Sistema de Seguridad**
-- Autenticación de usuarios
-- Control de acceso
-- Registro de eventos
+### **🔐 Sistema de Seguridad**
+**Archivo:** `sistema_seguridad.py`
+**Funciones:**
+- Autenticación con usuario y clave
+- Validación de longitud de contraseña
+- Estados booleanos de acceso
 
-#### **📊 Sistema de Ferretería**
-- Cálculo de IVA
-- Procesamiento de compras
-- Validación de garantía
+### **🔨 Sistema de Ferretería**
+**Archivo:** `sistema_ferreteria.py`
+**Funciones:**
+- Constantes: `IVA = 0.16`
+- Cálculos: `subtotal`, `impuesto`, `total`
+- Comparaciones: `cant_total > 2000`
+- Normalización: `.upper()`
 
-#### **📧 Generador de Email**
-- Normalización de nombres
-- Procesamiento de dominios
-- Aplicación de slicing avanzado
-- Comparación de soluciones
+### **📧 Generador de Email**
+**Archivos:**
+- `Cadenas/EjerciciosCurso/generador_email.py`
+- `Cadenas/EjerciciosCurso/resolucion_generador_email.py`
+**Funciones:**
+- Slicing avanzado: `[:6]`, `[-9:]`
+- Normalización: `.lower()`, `.replace()`, `.strip()`
+- F-strings complejos
 
-#### **🎓 Sistema de Estudiantes**
-- Registro académico
-- Validación de emails
-- Clasificación por rendimiento
-- Manejo de becas
+### **🎓 Sistema de Estudiantes**
+**Archivos:**
+- `EntradaDatos/EjerciciosOpencode/registro_estudiantes.py`
+- `EntradaDatos/EjerciciosOpencode/solucion_referencia_registro.py`
+**Funciones:**
+- Input validado: `.strip().title()`
+- Conversión de tipos: `int()`, `float()`
+- Booleanos correctos: `respuesta.lower() == 'si'`
+- Validación de email: `"@" in email and "." in email`
 
-#### **🍳 Recetas de Cocina**
-- Captura de ingredientes
-- Tiempos de preparación
-- Niveles de dificultad
+### **🎪 Generador de ID**
+**Archivo:** `EntradaDatos/EjerciciosCurso/generador_id.py`
+**Funciones:**
+- `random.randint(1000, 9999)` - Números aleatorios
+- Slicing: `[:2]`, `[2:]`
+- Normalización: `.strip().upper()`
 
-#### **👥 Sistema de Empleados**
-- Datos del personal
-- Salarios y edad
-- Categorización de roles
+### **🍳 Receta de Cocina**
+**Archivo:** `EntradaDatos/EjerciciosCurso/receta_cocina.py`
+**Funciones:**
+- Input mixto: `str`, `int`, `str`
+- Formato de recetas
 
-### **Política de Cero Soluciones Anticipadas**
+### **👥 Sistema de Empleados**
+**Archivos:**
+- `EntradaDatos/EjerciciosCurso/sistema_empleados.py`
+- `EntradaDatos/EjerciciosCurso/resolucion_sistema_empleados.py`
+**Funciones:**
+- Input con conversiones: `int()`, `float()`, `bool()`
+- Manejo correcto de booleanos: `respuesta.lower() == 'si'`
+- Formato de salarios con decimales: `:.2f`
 
-✅ **Lo que SÍ haré:**
-- Darte pistas si te estancas
-- Explicar conceptos relacionados
-- Sugerir enfoques de pensamiento
-- Celebrar tus logros y progreso
+---
 
-❌ **Lo que NO haré:**
-- Darte el código completo
-- Resolver el ejercicio por ti
-- Dar la respuesta directamente
-- Privarte del aprendizaje
+## 🏆 EJERCICIOS INTEGRADOS REALIZADOS
 
-### **Sistema de Evaluación**
+### **🎯 Ejercicio Integrado de Cadenas (24 Retos)**
+**Archivo:** `Cadenas/EjerciciosOpencode/ejercicio_integrado_cadenas.py`
+**Reto:** 15 minutos, 24 puntos
+**Resultado:** 100% preciso
+**Tecnologías:**
+- Todos los métodos de cadenas aplicados
+- Slicing complejo
+- Normalización
+- Formato avanzado
 
-#### **🏆 Criterios de Éxito**
-- **Funcionalidad:** El código resuelve el problema
-- **Claridad:** El código es legible y entendible
-- **Buenas Prácticas:** Sigue convenciones Python
-- **Creatividad:** Enfoques personales e innovadores
+### **🎯 Ejercicio de Slicing (3 Ejercicios)**
+**Archivo:** `Cadenas/EjerciciosOpencode/ejercicio_slicin.py`
+**Ejercicios:**
+1. Palabra "universidad" - slicing múltiple
+2. Código "C#750-OJO-nohtyP-2025" - decodificación
+3. Código "A#999-R#E#K#C#A#H-ovitan" - agente secreto
+**Tecnologías:**
+- Slicing: `[:5]`, `[-4:]`, `[::2]`, `[::-1]`, `[::-2]`
+- Inversión de texto
 
-#### **📈 Rúbrica de Retroalimentación**
-1. **Análisis Lógico:** ¿Entendiste el problema?
-2. **Implementación:** ¿Aplicaste correctamente los conceptos?
-3. **Calidad del Código:** ¿Es limpio y mantenible?
-4. **Pensamiento Crítico:** ¿Consideraste casos edge?
+### **🎯 Ejercicio de Búsqueda de Subcadenas**
+**Archivo:** `Cadenas/EjerciciosCurso/ejercicio_busc_subc.py`
+**Funciones:**
+- `.find()` para múltiples búsquedas
+- Casos de -1 cuando no existe
 
-#### **🎯 Metas de Aprendizaje**
-- Desarrollo del pensamiento algorítmico
-- Construcción de confianza en programación
-- Preparación para proyectos más complejos
-- Conexión con aplicaciones del mundo real
+### **🎯 Registro de Estudiantes (15 Puntos)**
+**Archivo:** `EntradaDatos/EjerciciosOpencode/registro_estudiantes.py`
+**Reto:** 15 minutos, 15 puntos
+**Resultado:** 100% funcional
+**Tecnologías:**
+- `input()` con validación
+- Conversión: `int()`, `float()`
+- Booleanos correctos: `== 'si'`
+- Cadenas: concatenación, f-strings
+- Normalización: `.strip().title()`
 
 ---
 
@@ -334,30 +639,72 @@ No automated test framework is implemented or needed for this educational conten
 
 ### **✅ Módulos Completados**
 
+#### **🟢 Módulo 1: Introducción (COMPLETO)**
+- **Lecciones Dominadas:** 8/8 lecciones
+- **Conceptos Cubiertos:**
+  - **Variables y Tipos de Datos:**
+    - `str` - Cadenas de texto
+    - `int` - Enteros
+    - `float` - Decimales
+    - `bool` - Booleanos
+    - `NoneType` - Ausencia de valor
+  - **Nomenclatura:**
+    - `snake_case` para variables
+    - `ALL_CAPS` para constantes
+    - Prefijos: `es_`, `tiene_`, `puede_`
+  - **Operadores:**
+    - Aritméticos: `+`, `-`, `*`, `/`, `%`
+    - Asignación: `=`, `+=`, `-=`, `/=`, `%=`
+    - Comparación: `==`, `!=`, `>`, `<`, `>=`, `<=`
+    - Lógicos: `and`, `or`, `not`
+  - **Módulos:**
+    - `import math`
+    - `math.pi`
+  - **Sistemas Aplicados:**
+    - Sistema de reservas de hoteles
+    - Sistema de tienda online
+    - Registro de superhéroe
+    - Explorador espacial
+
 #### **🔤 Módulo de Cadenas (COMPLETO)**
 - **Lecciones Dominadas:** 12/12 lecciones
 - **Métodos Cubiertos:**
-  - Creación: `''`, `""`, `""""""`
-  - Unión: `+`, `,`, `f{}`
-  - Repetición: `*`
-  - Longitud: `len()`
-  - Transformación: `.upper()`, `.lower()`
-  - Búsqueda: `.find()`
-  - Reemplazo: `.replace()`
-  - Slicing: `[:]` con índices positivos/negativos
-  - Escape: `\n`, `\t`, `\"`, `\\`
-  - Inmutabilidad: Concepto dominado
+  - **Creación:** `''`, `""`, `""""""`
+  - **Unión:** `+`, `,`, `f{}`
+  - **Repetición:** `*`
+  - **Longitud:** `len()`
+  - **Transformación:** `.upper()`, `.lower()`, `.title()`
+  - **Normalización:** `.strip()`, `.replace()`
+  - **Búsqueda:** `.find()`
+  - **Reemplazo:** `.replace()`
+  - **Slicing:** `[:]` con índices positivos/negativos
+  - **Escape:** `\n`, `\t`, `\"`, `\\`, `r""`
+  - **Inmutabilidad:** Concepto dominado
+- **Ejercicios Completados:**
+  - 24 retos integrados (100%)
+  - 3 ejercicios de slicing avanzado
+  - Generador de email con slicing
+  - Búsqueda de subcadenas
+  - Sistema de ferretería
+  - Sistema de seguridad
 
 #### **📡 Módulo de EntradaDatos (COMPLETO)**
-- **Lecciones Dominadas:** 4/4 lecciones
+- **Lecciones Dominadas:** 5/5 lecciones
 - **Conceptos Cubiertos:**
-  - Entrada: `input()` para capturar datos
-  - Conversión: `int()`, `float()`, `str()`
-  - Booleanos: `bool()` y manejo correcto
-  - Validación: `.strip()`, `.title()`, `.lower()`
-  - Random: `random.randint()` para valores aleatorios
+  - **Entrada:** `input()` para capturar datos
+  - **Conversión:** `int()`, `float()`, `str()`
+  - **Booleanos:** `bool()` y manejo correcto
+  - **Validación:** `.strip()`, `.title()`, `.lower()`
+  - **Random:** `random.randint()` para valores aleatorios
+  - **Errores Comunes:** `bool()` con strings no vacíos
 - **Ejercicios Curso:** 5 proyectos completos
 - **Ejercicios Opencode:** 3 soluciones implementadas
+- **Sistemas Aplicados:**
+  - Generador de emails
+  - Generador de IDs únicos
+  - Sistema de recetas
+  - Sistema de empleados (2 versiones)
+  - Registro de estudiantes (15 puntos, 15min)
 
 ### **🏆 Ejercicios Realizados**
 
@@ -394,6 +741,8 @@ No automated test framework is implemented or needed for this educational conten
 - **Captura y validación de entrada de datos**
 - **Conversión correcta de tipos de datos**
 - **Manejo de valores aleatorios con random**
+- **Validación de emails**
+- **Sistemas interactivos completos**
 
 ### **📅 Próximos Temas a Explorar**
 - Estructuras condicionales (if/else)
